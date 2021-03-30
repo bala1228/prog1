@@ -8,8 +8,11 @@ typedef struct {
 
 double distance(Pont p1, Pont p2)
 {
-    double d;
-    d = sqrt(((p2.x - p1.x) * (p2.x - p1.x)) + ((p2.y - p1.y) * (p2.y - p1.y)));
+    double d, a, b;
+    a = ((p2.x - p1.x) * (p2.x - p1.x));
+    b = ((p2.y - p1.y) * (p2.y - p1.y));
+    d = sqrt(a + b);
+    
 
     return d;
 }
