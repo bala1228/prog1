@@ -8,14 +8,10 @@ typedef struct {
 
 double distance(Pont p1, Pont p2)
 {
-    double d, a, b;
-    a = ((p2.x - p1.x) * (p2.x - p1.x));
-    b = ((p2.y - p1.y) * (p2.y - p1.y));
-    d = sqrt(a + b);
-    
-    printf("a: %lf, b: %lf, d: %lf\n", a, b, d);
+    double distance;
+    distance = sqrt(((p2.y - p1.y) * (p2.y - p1.y)) + ((p2.x - p1.x) * (p2.x - p1.x)));
 
-    return d;
+    return distance;
 }
 
 int main()
