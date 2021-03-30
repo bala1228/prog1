@@ -1,0 +1,6 @@
+QTabBar::tab:selected {
+    background: blue;
+    color: black;
+    font: bold;
+}
+	
