@@ -13,6 +13,7 @@ double distance(Pont p1, Pont p2)
     b = ((p2.y - p1.y) * (p2.y - p1.y));
     d = sqrt(a + b);
     
+    printf("a: %lf, b: %lf, d: %lf\n", a, b, d);
 
     return d;
 }
