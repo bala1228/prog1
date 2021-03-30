@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
-typedef struct {
+typedef struct 
+{
     int x;
     int y;
 } Pont;
