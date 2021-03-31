@@ -46,33 +46,28 @@ void array_sorting(int tomb[], int size)
 
 int main()
 {
-    int size = 5;
-    int min = 1;
-    int max = 90;
+    int size = 0;
+    int min = 0;
+    int max = 0;
     
-    /*
+    
     // Bekérjük hány random számot genráljunk.
     printf("Hány db random számot kérsz?\n");
-    scanf("%d", &n);
+    scanf("%d", &size);
     // Bekérjük a lehetséges legkisebb értéket.
     printf("Alsó határ: ");
     scanf("%d", &min);
     // Bekérjük a lehetséges legnagyobb értéket.
     printf("Felső határ (zárt intervallum): ");
     scanf("%d", &max);
-    */
 
-    int test[5] = { 1, 2, 3, 3, 4 };
+    int test[size];
        
     for (int i = 0; i < size; i++)
     {
-        for (int i = 0; i < size - 1; i++)
-        {
-            printf("%d, ", test[i]);
-        }
-        
-        //test[i] = (rand() % (max - min + 1) + min);
-        for (int j = 0; j < size; j++)
+        test[i] = (rand() % (max - min + 1) + min);
+
+        for (int j = 1; j < size; j++)
         {
             if (test[j] == test[i])
             {
@@ -80,7 +75,7 @@ int main()
             }
         }
     }
-    
+
     array_sorting(test, size);
     test_flow(test, max, min, size);
     
