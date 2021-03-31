@@ -22,17 +22,35 @@ int test_flow(int tomb[], int max, int min, int n)
     
 }
 
+// Buborék rendezés
 void array_sorting(int tomb[], int meret)
 {
-    // TODO
+    for (int i = 1; i < meret; i++)
+    {
+        for (int j = meret - 1; j >= i; j--)
+        {
+            if (tomb[j - 1] > tomb[j])
+            {
+                int tmp = tomb[j - 1];
+                tomb[j - 1] = tomb[j];
+                tomb[j] = tmp;
+            }   
+        }   
+    }
+    for (int i = 0; i < meret - 1; i++)
+    {
+        printf("%d, ", tomb[i]);
+    }
+    printf("%d\n", tomb[meret - 1]);
 }
 
 int main()
 {
-    int n = 0;
-    int min = 0;
-    int max = 0;
+    int n = 5;
+    int min = 1;
+    int max = 90;
     
+    /*
     // Bekérjük hány random számot genráljunk.
     printf("Hány db random számot kérsz?\n");
     scanf("%d", &n);
@@ -42,7 +60,8 @@ int main()
     // Bekérjük a lehetséges legnagyobb értéket.
     printf("Felső határ (zárt intervallum): ");
     scanf("%d", &max);
-    
+    */
+
     int test[n];
        
     for (int i = 0; i < n; i++)
@@ -50,9 +69,11 @@ int main()
         test[i] = (rand() % (max - min + 1) + min);
     }
     
-    puts("");
-
+    array_sorting(test, n);
     test_flow(test, max, min, n);
+    
+    
+    puts("");
 
     return 0;
 }	
