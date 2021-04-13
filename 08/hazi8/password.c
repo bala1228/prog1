@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #define SIZE 100
 
+// Jelszó ellenőrzése:
+// Legalább 8 karakter, tartalmaz kis-, és nagybetűt
 int password_checker(char password[])
 {
     int lower_case_counter = 0;
@@ -49,10 +51,11 @@ int main()
 {
     char password[SIZE];
 
+    // Beolvasás "*" végjelig
     while (1)
     {
         printf("Enter a password: ");
-        scanf("%s", &password);
+        scanf("%s", password);
 
         if (strchr(password, '*') != NULL)
         {
