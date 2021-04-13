@@ -4,6 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 
+// Számok négyzetösszege
 int sum_of_squares(int numbers)
 {
     int sum = 0;
@@ -16,6 +17,7 @@ int sum_of_squares(int numbers)
     return sum;
 }
 
+// Számok összegének a négyzete
 int square_of_sums(int n)
 {
     int sum = 0;
