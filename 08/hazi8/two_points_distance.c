@@ -17,8 +17,8 @@ double distance(Pont p1, Pont p2)
 
 int main()
 {
-    Pont a = { 1, 2 };
-    Pont b = { 6, 5 };
+    Pont a = { -4, 5 };
+    Pont b = { 7, 15 };
 
     printf("A két pont közti távolság: %lf\n", distance(a, b));
 

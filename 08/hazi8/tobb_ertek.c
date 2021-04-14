@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <time.h>
 #define SIZE 10
 
 // Generál egy random 10 elemű tömböt min és max között, majd visszadja ezek
@@ -48,7 +48,8 @@ int main()
     int min = 10;
     int max = 99;
     int array[SIZE];
-
+    srand(time(NULL));
+    
     array_min_max_avg(min, max, array);
        
     return 0;

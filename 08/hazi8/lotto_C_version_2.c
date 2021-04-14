@@ -4,6 +4,7 @@
 
 int main()
 {
+    // Változók
     int output = 0;
     int min = 0;
     int max = 0;
@@ -30,21 +31,21 @@ int main()
 
     srand(time(NULL));
     
-    //Fisher–Yates keverés algoritmus
+    // Fisher–Yates keverés algoritmus
     for (i = size - 1; i > 0; i--)
     {
         // Random index
         int r = rand() % i;
-        //számok keverése
+        // számok keverése
         temp = test[i];
         test[i] = test[r];
         test[r] = temp;
     }
-
     for (i = 0; i < output; i++)
     {
-        printf("%d, ", test[i]);
+        printf("%d ", test[i]);
     }
+    puts("");
     
     return 0;
 }
