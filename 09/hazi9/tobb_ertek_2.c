@@ -9,45 +9,8 @@ typedef struct
 {
     int min;
     int max;
-    int avg;
+    float avg;
 } Min_Max_Avg;
-
-int search_min(int array[], Min_Max_Avg result)
-{
-    for (int i = 0; i < SIZE; i++)
-    {
-        if (result.min > array[i])
-        {
-            result.min = array[i];
-        }
-    }
-    
-    return result.min;
-}
-
-int search_max(int array[], Min_Max_Avg result)
-{
-     for (int i = 0; i < SIZE; i++)
-    {
-        if (result.max < array[i])
-        {
-            result.max = array[i];
-        }
-    }
-    
-    return result.max;
-}
-
-int calculate_avg(int array[], Min_Max_Avg result)
-{
-    for (int i = 0; i < SIZE; i++)
-    {
-        result.avg += array[i];
-    }
-    result.avg = result.avg / 2;
-
-    return result.avg;
-}
 
 // Tömb elemeinek kiírása
 void array_output(int array[])
@@ -77,9 +40,9 @@ Min_Max_Avg get_min_max_avg()
     fill_array(array, min, max);
     array_output(array);
 
-    Min_Max_Avg result = {search_min(array, result), search_max(array, result), calculate_avg(array, result)};
+    Min_Max_Avg result = {max, min, 0};
 
-    /*// Min és max keresése
+    // Min és max keresése
     for (int i = 0; i < SIZE; i++)
     {    
         result.avg += array[i];
@@ -94,16 +57,14 @@ Min_Max_Avg get_min_max_avg()
         }
     }
     result.avg = result.avg / SIZE;
-    */
+    
     return result; 
 }    
 
 int main()
 {
+    srand(time(NULL));
     
-    //srand(time(NULL));
-    
-    //array_min_max_avg(min, max, array);
     Min_Max_Avg output = get_min_max_avg();
 
     printf("Legkisebb elem: %d\n", output.min);
