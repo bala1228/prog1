@@ -50,11 +50,33 @@ void array_min_max_avg(int min, int max, int array[])
     
 }    
 
+// Tömb elemeinek kiírása
+void array_output(int array[])
+{
+    for (int i = 0; i < (SIZE - 1); i++)
+    {
+        printf("%d, ", array[i]);
+    }
+    printf("%d\n", array[SIZE - 1]);
+}
+
+// Értékek generálása és tömb feltöltése
+void fill_array(int array[], int min, int max)
+{
+    for (int i = 0; i < SIZE; i++)
+    {
+        array[i] = (rand() % (max - min + 1) + min);
+    }
+}
+
 Min_Max_Avg get_min_max_avg()
 {
     int min = 10;
     int max = 99;
     int array[SIZE];
+
+    fill_array(array, min, max);
+
 }
 
 int main()
