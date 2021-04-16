@@ -5,6 +5,14 @@
 
 // https://arato.inf.unideb.hu/szathmary.laszlo/pmwiki/index.php?n=Prog1.20200407a
 
+typedef struct 
+{
+    int min;
+    int max;
+    int avg;
+} Min_Max_Avg;
+
+
 // Generál egy random 10 elemű tömböt min és max között, majd visszadja ezek
 // közül a legkisebb és a legnagyobb elemet
 void array_min_max_avg(int min, int max, int array[])
@@ -40,19 +48,28 @@ void array_min_max_avg(int min, int max, int array[])
     }
     avg = avg / SIZE;
     
-    printf("Legkisebb elem: %d\n", temp_min);
-    printf("Legnagyobb elem: %d\n", temp_max);
-    printf("Az elemek átlaga: %.1f\n", avg);
-}
+}    
 
-int main()
+Min_Max_Avg get_min_max_avg()
 {
     int min = 10;
     int max = 99;
     int array[SIZE];
-    srand(time(NULL));
+}
+
+int main()
+{
     
-    array_min_max_avg(min, max, array);
-       
+    //srand(time(NULL));
+    
+    //array_min_max_avg(min, max, array);
+    Min_Max_Avg output = get_min_max_avg();
+
+    printf("Legkisebb elem: %d\n", output.min);
+    printf("Legnagyobb elem: %d\n", output.max);
+    printf("Az elemek átlaga: %.1f\n", output.avg);
+
+
+
     return 0;
 }
