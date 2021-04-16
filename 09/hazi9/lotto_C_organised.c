@@ -2,6 +2,22 @@
 #include <time.h>
 #include <stdlib.h>
 
+// Fisher–Yates keverés algoritmus
+void fisher_yates_algorithm(int array[], int array_size)
+{
+    int temp = 0;
+    
+    for (int i = array_size - 1; i > 0; i--)
+    {
+        // Random index
+        int r = rand() % i;
+        // számok keverése
+        temp = array[i];
+        array[i] = array[r];
+        array[r] = temp;
+    }
+}
+
 int main()
 {
     // Változók
@@ -31,21 +47,14 @@ int main()
 
     srand(time(NULL));
     
-    // Fisher–Yates keverés algoritmus
-    for (i = size - 1; i > 0; i--)
-    {
-        // Random index
-        int r = rand() % i;
-        // számok keverése
-        temp = test[i];
-        test[i] = test[r];
-        test[r] = temp;
-    }
+    fisher_yates_algorithm(test, size);
+
     for (i = 0; i < output; i++)
     {
         printf("%d ", test[i]);
     }
     puts("");
     
+
     return 0;
 }
