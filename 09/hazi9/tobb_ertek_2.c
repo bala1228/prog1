@@ -3,6 +3,8 @@
 #include <time.h>
 #define SIZE 10
 
+// https://arato.inf.unideb.hu/szathmary.laszlo/pmwiki/index.php?n=Prog1.20200407a
+
 // Generál egy random 10 elemű tömböt min és max között, majd visszadja ezek
 // közül a legkisebb és a legnagyobb elemet
 void array_min_max_avg(int min, int max, int array[])
