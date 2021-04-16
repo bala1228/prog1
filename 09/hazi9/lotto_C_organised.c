@@ -2,6 +2,9 @@
 #include <time.h>
 #include <stdlib.h>
 
+// Feladat:
+// https://arato.inf.unideb.hu/szathmary.laszlo/pmwiki/index.php?n=Prog1.20200326d
+
 // Fisher–Yates keverés algoritmus
 void fisher_yates_algorithm(int array[], int array_size)
 {
