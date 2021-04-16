@@ -12,43 +12,42 @@ typedef struct
     int avg;
 } Min_Max_Avg;
 
-
-// Generál egy random 10 elemű tömböt min és max között, majd visszadja ezek
-// közül a legkisebb és a legnagyobb elemet
-void array_min_max_avg(int min, int max, int array[])
+int search_min(int array[], Min_Max_Avg result)
 {
-    int temp_min = max, temp_max = min; 
-    float avg = 0;
-    
-    // Értékek generálása és tömb feltöltése
     for (int i = 0; i < SIZE; i++)
     {
-        array[i] = (rand() % (max - min + 1) + min);
+        if (result.min > array[i])
+        {
+            result.min = array[i];
+        }
     }
-    // Tömb elemeinek kiírása
-    for (int i = 0; i < (SIZE - 1); i++)
-    {
-        printf("%d, ", array[i]);
-    }
-    printf("%d\n", array[SIZE - 1]);
+    
+    return result.min;
+}
 
-    // Min és max keresése
+int search_max(int array[], Min_Max_Avg result)
+{
+     for (int i = 0; i < SIZE; i++)
+    {
+        if (result.max < array[i])
+        {
+            result.max = array[i];
+        }
+    }
+    
+    return result.max;
+}
+
+int calculate_avg(int array[], Min_Max_Avg result)
+{
     for (int i = 0; i < SIZE; i++)
     {
-        avg += array[i];
-
-        if (temp_min > array[i])
-        {
-            temp_min = array[i];
-        }
-        if (temp_max < array[i])
-        {
-            temp_max = array[i];
-        }
+        result.avg += array[i];
     }
-    avg = avg / SIZE;
-    
-}    
+    result.avg = result.avg / 2;
+
+    return result.avg;
+}
 
 // Tömb elemeinek kiírása
 void array_output(int array[])
@@ -74,12 +73,13 @@ Min_Max_Avg get_min_max_avg()
     int min = 10;
     int max = 99;
     int array[SIZE];
-    Min_Max_Avg result = {0, 0, 0};
     
     fill_array(array, min, max);
     array_output(array);
 
-    // Min és max keresése
+    Min_Max_Avg result = {search_min(array, result), search_max(array, result), calculate_avg(array, result)};
+
+    /*// Min és max keresése
     for (int i = 0; i < SIZE; i++)
     {    
         result.avg += array[i];
@@ -94,7 +94,7 @@ Min_Max_Avg get_min_max_avg()
         }
     }
     result.avg = result.avg / SIZE;
-
+    */
     return result; 
 }    
 
