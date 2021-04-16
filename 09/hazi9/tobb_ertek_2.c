@@ -74,10 +74,29 @@ Min_Max_Avg get_min_max_avg()
     int min = 10;
     int max = 99;
     int array[SIZE];
-
+    Min_Max_Avg result = {0, 0, 0};
+    
     fill_array(array, min, max);
+    array_output(array);
 
-}
+    // Min és max keresése
+    for (int i = 0; i < SIZE; i++)
+    {    
+        result.avg += array[i];
+
+        if (result.min > array[i])
+        {
+            result.min = array[i];
+        }
+        if (result.max < array[i])
+        {
+            result.max = array[i];
+        }
+    }
+    result.avg = result.avg / SIZE;
+
+    return result; 
+}    
 
 int main()
 {
@@ -90,8 +109,6 @@ int main()
     printf("Legkisebb elem: %d\n", output.min);
     printf("Legnagyobb elem: %d\n", output.max);
     printf("Az elemek átlaga: %.1f\n", output.avg);
-
-
 
     return 0;
 }
