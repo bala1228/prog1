@@ -10,9 +10,41 @@
 // legalább 1 karakter hosszú
 int is_valid_c_identifier(const char* input)
 {
-    // TODO
+    int length = strlen(input);
+    printf("* lenght: %d\n", length);
     
-    return 0;
+    if (length < 1)
+    {  
+        return 0;    
+    }
+    if (input[0] >= '0' && input[0] <= '9')
+    {
+        return 0;
+    }
+    for (int i = 0; i < length; i++) 
+    {
+        if (input[i] < '0') 
+        {
+            return 0;
+        }
+        if (input[i] > '9' && input[i] < 'A')
+        { 
+            return 0;
+        }
+        if (input[i] > 'Z' && input[i] < 'a') 
+        {
+            if (input[i] != '_')
+            {
+                return 0;
+            }
+        }
+        if (input[i] > 'z')
+        {
+            return 0;
+        } 
+    }
+
+    return 1;
 }
 
 int main()
@@ -29,7 +61,7 @@ int main()
             exit(0);
         }
         
-        is_valid_c_identifier(input);
+        printf("*%d\n", is_valid_c_identifier(input));
     }
     
     return 0;
