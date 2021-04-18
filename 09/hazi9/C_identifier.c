@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "prog1.h"
 #define SIZE 100
 
 // https://arato.inf.unideb.hu/szathmary.laszlo/pmwiki/index.php?n=Prog1.20200409b
@@ -9,22 +10,19 @@
 // legalább 1 karakter hosszú
 int is_valid_c_identifier(const char* input)
 {
-    printf("*Beolvasás: %s", input);
-    puts("");
+    // TODO
     
     return 0;
 }
 
 int main()
 {
-    char* input;
-
+    printf("Adj meg stringeket '*' végjelig!\n\n");
+    
     // Beolvasás "*" végjelig
     while (1)
     {
-        printf("Enter a input: ");
-        fgets(input, SIZE, stdin);
-        //input[(strlen(input) - 1)] = '\0';
+        char* input = get_string("Input: ");
 
         if (strchr(input, '*') != NULL)
         {
