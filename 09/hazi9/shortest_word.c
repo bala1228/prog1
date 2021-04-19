@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include <string.h>
-#include <ctype.h>
 #define SIZE 100
+
+// https://arato.inf.unideb.hu/szathmary.laszlo/pmwiki/index.php?n=Prog1.20200409a
 
 // Megkap egy stringeket tartalmazó tömböt, annak hosszát, 
 // illetve a legrövidebb szavak hosszát és kiírja a legrövidebb
