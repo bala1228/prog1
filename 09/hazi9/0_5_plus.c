@@ -17,7 +17,6 @@ int main()
     
     printf("# 0,5-nél nagyobb számok szűrése...\n");
     
-    
     while(fgets(buffer, SIZE, fp)) 
     {
         if (atof(buffer) > 0.5)
