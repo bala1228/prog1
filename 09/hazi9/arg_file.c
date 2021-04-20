@@ -1,15 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include <string.h>
-#include "prog1.h"
+
+int get_number_of_lines(FILE *fp)
+{
+    char c;
+    int counter = 0;
+    
+    for (c = getc(fp); c != EOF; c = getc(fp))
+    {    
+        if (c == '\n')
+        {    
+            counter++;
+        }
+    }
+
+    return counter;
+}
 
 int main(int argc, char *argv[])
 {
-    FILE *fp;
     char *filename = argv[1];
-
-    fp = fopen(filename, "r");
+    FILE *fp = fopen(filename, "r");
     
     if (argc != 2)
     {
@@ -23,8 +35,7 @@ int main(int argc, char *argv[])
         exit(2);
     }
     
+    printf("%d", get_number_of_lines(fp));
 
-
-
-    return 0;
+    exit(0);
 }
