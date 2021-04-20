@@ -21,7 +21,7 @@ int main()
     {
         if (atof(buffer) > 0.5)
         {
-            fprintf(fp_2, buffer);
+            fputs(buffer, fp_2);
         }  
     }
     
