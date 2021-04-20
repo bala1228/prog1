@@ -1,30 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-#include <string.h>
-#include <ctype.h>
+#define SIZE 100
 
 int main()
 {
-    char *filename = "in.txt";
-    char *filename_2 = "out.txt";
-    int bufferLength = 255;
-    char buffer[bufferLength];
+    FILE *fp;
+    char filename[SIZE] = "out.txt";
+    char filename_2[SIZE] = "out_2.txt";
+    char buffer[SIZE];
+    int count = 0;
+    char c;
 
-    FILE *fp = fopen(filename, "r");
+    fp = fopen(filename, "r");
+    printf("# in.txt sikeresen megnyitva\n");
     FILE *fp_2 = fopen(filename_2, "w");
     
-    while(fgets(buffer, bufferLength, fp)) 
+    printf("# 0,5-nél nagyobb számok szűrése...\n");
+    
+    
+
+    while(fgets(buffer, SIZE, fp)) 
     {
-        printf("%s", buffer);
         if (atof(buffer) > 0.5)
         {
             fprintf(fp_2, buffer);
-        }
-        
+        }  
     }
-
+    
+    for (c = getc(fp); c != EOF; c = getc(fp))
+    {    
+        if (c == '\n')
+        {    
+            count = count + 1;
+        }
+    }
+    
     fclose(fp);
+    fclose(fp_2);
+    printf("# out.txt bezárva\n");
+    printf("# in.txt-be kiírt számok mennyisége: %d db", count);
+    
+    printf("\n");
 
-    return 0;
+    exit(0);
 }
