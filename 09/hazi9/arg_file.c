@@ -31,11 +31,11 @@ int main(int argc, char *argv[])
 
     if (fp == NULL)
     {
-        printf("Hiba! A %s nevű file-t nem sikerült megnyitni!", filename);
+        printf("Hiba! A %s nevű file-t nem sikerült megnyitni!\n", filename);
         exit(2);
     }
     
-    printf("%d", get_number_of_lines(fp));
+    printf("%d\n", get_number_of_lines(fp));
 
     exit(0);
 }
