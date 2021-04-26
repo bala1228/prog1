@@ -24,7 +24,7 @@ int main()
 
     for (temp = 0, i = min; temp < size; temp++, i++)
     {
-        test[temp] = i;
+        test[temp] = (rand() % (max - min + 1)) + min;
     }
 
     srand(time(NULL));
