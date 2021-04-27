@@ -28,23 +28,17 @@ void bubble_sort(char array[], int array_size)
 
 int main(int argc, char *argv[])
 {
-    if (argc != 2)
-    {
-        fprintf(stderr ,"Adja meg a file nevét!\n");
-        exit(1);
-    }
-    char buffer[SIZE];
+    FILE *f = fopen("specification.txt", "r");
+    char currentline[SIZE];
+    int index = 0;
     int numbers[SIZE];
-    int i = 0;
 
-    FILE *f = fopen(argv[2], "r");
-    fscanf(f, "%s", buffer);
-    
-    printf("*%s", buffer);
-    
-    puts("");
-    
-    //sorting(buffer);
-    
-    return 0;
+
+    while (fgets(currentline, sizeof(currentline), f) != NULL) 
+    {
+        printf("got line: %s\n", currentline);
+        
+    }
+
+    fclose(f);
 }
