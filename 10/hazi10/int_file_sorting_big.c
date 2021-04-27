@@ -25,8 +25,8 @@ int main(int argc, char *argv[])
     int index = 0;
     FILE *fp;
     char *filename = argv[1];
-    char buffer[SIZE];
-    int numbers[SIZE];
+    char *buffer = malloc(3000000 * sizeof(int));
+    int *numbers = malloc(3000000 * sizeof(int));
     fp = fopen(filename, "r");
     if (fp == NULL)
     {
