@@ -57,9 +57,10 @@ void * da_destroy(DynArray *self)
     return NULL;
 }
 
-void da_clear(DynArray *self)
+void * da_clear(DynArray *self)
 {
-    
+    self = da_destroy(self);
+    self = da_create();
 }
 
 int main()
@@ -68,8 +69,10 @@ int main()
 
     // li.append(1);
     da_append(li, 1);
+    
     da_append(li, 2);
     da_append(li, 3);
+    li = da_clear(li);
     for (int i = 4; i <= 20; ++i) {
         da_append(li, i);
     }
