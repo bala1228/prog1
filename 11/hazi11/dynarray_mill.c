@@ -90,12 +90,12 @@ void * da_destroy(DynArray *self)
 int main()
 {
     char line[BUFFERSIZE];
-    char *filename = "millions.txt";
+    char *filename = "input.txt";
     int sorok_szama = 0;
     DynArray *li = da_create();
     FILE *fp = fopen(filename, "r");
     FILE *fp_2 = fopen("output.txt", "w");
-    if (fp == NULL)
+    if (fp == NULL || fp_2 == NULL)
     {
         fprintf(stderr, "Fájl megnyitása sikertelen!\n");
         exit(1);
@@ -113,6 +113,9 @@ int main()
         fprintf(fp_2 ,"%d\n", li->elems[i]);
     }
     puts("");
+
+    fclose(fp);
+    fclose(fp_2);
 
     li = da_destroy(li);
 
