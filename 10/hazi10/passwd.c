@@ -29,7 +29,6 @@ void passwordgenerator()
   
     char password[length];
   
-    
     int random = rand() % 4;
   
     for (int i = 0; i < length; i++) {

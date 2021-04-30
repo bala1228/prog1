@@ -6,7 +6,6 @@
 
 int choice(const int n, const int tomb[])
 {
-    srand((time(NULL)));
     int index = rand() % n;
 
     return tomb[index];
@@ -14,6 +13,8 @@ int choice(const int n, const int tomb[])
 
 int main()
 {   
+    srand((time(NULL)));
+
     int array[10] = { 0 };
     int array_size = 10;
     for (int i = array_size; i != 0; i--)
