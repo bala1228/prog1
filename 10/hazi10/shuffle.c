@@ -20,11 +20,11 @@ void shuffle(int n, int tomb[])
 
 int main()
 {
-    int tomb[] = { 1, 2, 3, 4, 5, 6 };
-    int tomb_hossz = 6;
+    int tomb[] = { 1, 2, 3, 4, 5, 6, 7, 8 };
+    int tomb_hossz = 8;
 
 
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < tomb_hossz; i++)
     {
         printf("%d ", tomb[i]);
     }
@@ -32,7 +32,7 @@ int main()
 
     shuffle(tomb_hossz, tomb);
 
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < tomb_hossz; i++)
     {
         printf("%d ", tomb[i]);
     }
