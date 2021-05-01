@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include <string.h>
-#include <ctype.h>
+#include <time.h>
 
 void my_strfry(char *string)
 {
-    int len = strlen(string);
-    if (len > 0)
-    for (int i = 0; i < len - 1; ++i)
+    srand(time(NULL));
+    
+    int length = strlen(string);
+    if (length > 0)
+    for (int i = 0; i < length - 1; ++i)
     {
-        int j = rand() % (len - i) + i;
+        int j = (rand() % (length - i)) + i;
         char c = string[i];
         string[i] = string[j];
         string[j] = c;
@@ -19,7 +20,7 @@ void my_strfry(char *string)
 
 int main()
 {
-    char *string = "egy";
+    char string[] = "Programozas 1";
     printf("Elotte: %s\n", string);
     my_strfry(string);
     printf("Elotte: %s\n", string);
