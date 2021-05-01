@@ -3,14 +3,12 @@
 #include <string.h>
 #include <ctype.h>
 
-void string_to_upper(char *string)
+void string_to_upper(char *s)
 {
-    for (int i = 0; string[i] != '\0'; i++) 
+    while (*s) 
     {
-        if (string[i] >= 'a' && string[i] <= 'z') 
-        {
-            string[i] = string[i] - 32;
-        }
+        *s = toupper(*s);
+        s++;
     }
 }
 
@@ -35,11 +33,11 @@ int my_strcmpi(const char *s1, const char *s2)
 
 int main()
 {
-    char *string_1 = "ez";
+    char *s = "ez";
     char *string_2 = "Ez";
-    string_to_upper(string_1);
+    string_to_upper(s);
     
-    printf("%s\n", string_1);
+    printf("%s\n", s);
     
     return 0;
 }
