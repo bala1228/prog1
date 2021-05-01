@@ -5,11 +5,8 @@
 
 void string_to_upper(char *s)
 {
-    while (*s) 
-    {
-        *s = toupper(*s);
-        s++;
-    }
+    int length = strlen(s);
+    printf("*%d\n", length);
 }
 
 int my_strcmpi(const char *s1, const char *s2)
