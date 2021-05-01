@@ -109,8 +109,9 @@ int main()
 
     quicksort(li->elems, 0, sorok_szama - 1);
     
-    for (int i = 0; i < li->length; ++i) {
-        fprintf(fp_2 ,"%d\n", li->elems[i]);
+    for (int i = 0; i < li->length; ++i) 
+    {
+        fprintf(fp_2, "%d\n", li->elems[i]);
     }
     puts("");
 
