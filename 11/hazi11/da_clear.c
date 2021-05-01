@@ -67,7 +67,6 @@ int main()
 {
     DynArray *li = da_create();
 
-    // li.append(1);
     da_append(li, 1);
     da_append(li, 2);
     da_append(li, 3);
