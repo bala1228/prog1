@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
  
- 
 int main()
 {
     int* cella = (int*)calloc(600, sizeof(int));
