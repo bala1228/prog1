@@ -90,7 +90,7 @@ void * da_destroy(DynArray *self)
 int main()
 {
     char line[BUFFERSIZE];
-    char *filename = "input.txt";
+    char *filename = "millions.txt";
     int sorok_szama = 0;
     DynArray *li = da_create();
     FILE *fp = fopen(filename, "r");
