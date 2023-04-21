@@ -10,6 +10,11 @@
 #include <signal.h>
 #include <string.h>
 
+int Measurement(int **Values)
+{
+    
+}
+
 void helper(int argc, char* argv[])
 {
     puts("// Üzemmódok:\n");
@@ -40,7 +45,7 @@ int main(int argc, char* argv[])
     // Program infók --version kapcsolóra
     if (strcmp(argv[1], arguments[1]) == 0) 
     {
-        printf("Rendszerközeli programozás projekt verzió: 0.1\n");
+        printf("Rendszerközeli programozás projekt verzió: 0.2.1\n");
         printf("Fejlesztő: Miklós Balázs\n");
         printf("Elkészült: 2023-04-12 (Folyamatban)\n");
         exit(0);
